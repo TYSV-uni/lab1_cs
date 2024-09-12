@@ -1,12 +1,5 @@
 ﻿internal class number_operations
 {
-    public static string transform_list(List<ValueType> list, Func<ValueType,string> func) {
-        string res = "[";
-        foreach(ValueType num in list) {
-            res += func(num) + ", ";
-        }
-        return string.Join("",res.Take(res.Length - 2)) + "]";
-    }
     private static void Main(string[] args)
     {
         // ValueType = Number
@@ -50,5 +43,13 @@
 
         Console.WriteLine("\nIntegers: " + transform_list(integers,(x) => x.ToString().Replace(",",".")) + "\n");
     }
-    
+
+    public static string transform_list(List<ValueType> list, Func<ValueType,string> func) {
+        string res = "[";
+        foreach(ValueType num in list) {
+            res += func(num) + ", ";
+        }
+        return string.Join("",res.Take(res.Length - 2)) + "]";
+    }
+
 }
