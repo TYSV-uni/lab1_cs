@@ -12,3 +12,4 @@ C:\Users\Kate\RiderProjects\number_operations\number_operations\obj\Debug\net8.0
 C:\Users\Kate\RiderProjects\number_operations\number_operations\obj\Debug\net8.0\number_operations.pdb
 C:\Users\Kate\RiderProjects\number_operations\number_operations\obj\Debug\net8.0\number_operations.genruntimeconfig.cache
 C:\Users\Kate\RiderProjects\number_operations\number_operations\obj\Debug\net8.0\ref\number_operations.dll
+C:\Users\Kate\RiderProjects\number_operations\number_operations\obj\Debug\net8.0\number_operations.sourcelink.json
