@@ -1,5 +1,12 @@
 ﻿internal class number_operations
 {
+    public static string transform_list(List<ValueType> list, Func<ValueType,string> func) {
+        string res = "[";
+        foreach(ValueType num in list) {
+            res += func(num) + ", ";
+        }
+        return string.Join("",res.Take(res.Length - 2)) + "]";
+    }
     private static void Main(string[] args)
     {
         // ValueType = Number
@@ -13,11 +20,13 @@
         number_list.Add(double_num);
         number_list.Add(float_num);
         
+        
         Console.WriteLine("\nWhole List: " + transform_list(number_list, (ValueType x) => x.ToString().Replace(",",".")) + "\n");
         
         Console.WriteLine("List rounded to ints: " + transform_list(number_list, (x)=> Convert.ToInt64(x).ToString()) + "\n");
  
         Console.WriteLine("List formatted to 2 decimals: " + transform_list(number_list,(x) => Convert.ToDecimal(x).ToString("0.00").Replace(",",".")) + "\n");
+        
         
         Dictionary<Type, List<ValueType>> num_lists = new Dictionary<Type, List<ValueType>>();
         foreach (ValueType x in number_list)
@@ -32,8 +41,7 @@
             Console.Write(x.Key.ToString().Split(".").Last() + " list: " + transform_list(x.Value,(y) => y.ToString().Replace(",",".")) + "\n");
         }
         
-
-
+        
         List<ValueType> integers = new List<ValueType>();
         foreach(ValueType x in number_list) {
             if(Convert.ToDecimal(x) % 1 == 0){
@@ -43,13 +51,5 @@
 
         Console.WriteLine("\nIntegers: " + transform_list(integers,(x) => x.ToString().Replace(",",".")) + "\n");
     }
-
-    public static string transform_list(List<ValueType> list, Func<ValueType,string> func) {
-        string res = "[";
-        foreach(ValueType num in list) {
-            res += func(num) + ", ";
-        }
-        return string.Join("",res.Take(res.Length - 2)) + "]";
-    }
-
+    
 }
